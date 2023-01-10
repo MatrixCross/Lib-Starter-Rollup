@@ -1,0 +1,32 @@
+{
+  "name": "lib-starter-rollup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/cjs/lib.js",
+  "module": "dist/esm/lib.js",
+  "types": "types/index.d.ts",
+  "jsdelivr": "dist/iife/lib.js",
+  "unpkg": "dist/iife/lib.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/lib.js",
+      "require": "./dist/cjs/lib.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "npm run build:types && npm run build:libs",
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir types",
+    "build:libs": "rollup -c --bundleConfigAsCjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.3.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rollup": "^3.9.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4"
+  }
+}
