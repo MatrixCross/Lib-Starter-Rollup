@@ -15,9 +15,11 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "npm run build:types && npm run build:libs",
+    "build": "npm run build:types && npm run build:libs && build:doc",
     "build:types": "tsc --declaration --emitDeclarationOnly --outDir types",
-    "build:libs": "rollup -c --bundleConfigAsCjs"
+    "build:libs": "rollup -c --bundleConfigAsCjs",
+    "build:docs": "typedoc",
+    "preview:docs": "vitepress dev ."
   },
   "keywords": [],
   "author": "",
@@ -27,6 +29,19 @@
     "@rollup/plugin-typescript": "^11.0.0",
     "rollup": "^3.9.1",
     "tslib": "^2.4.1",
-    "typescript": "^4.9.4"
+    "typedoc": "^0.23.24",
+    "typescript": "^4.9.4",
+    "vitepress": "1.0.0-alpha.36",
+    "vue": "^3.2.45"
+  },
+  "dependencies": {
+    "typedoc-plugin-markdown": "^3.14.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ]
+    }
   }
 }

@@ -6,6 +6,7 @@
 
 - 支持 typescript
 - 支持 terser 压缩
+- 支持 typedoc 生成文档、vitepress 演示
 
 ## 使用教程
 
