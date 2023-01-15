@@ -38,9 +38,10 @@ jobs:
         run: pnpm install
       # 生成测试覆盖率
       - name: Run Test Coverage
-        run: pnpm test:cov
+        run: npx vitest --coverage
       # 生成pr报告
       - name: Report Coverage
+        if: always() # Also generate the report if tests are failing
         uses: davelosert/vitest-coverage-report-action@v1
       # 上传到codecov
       - name: Upload coverage to Codecov
