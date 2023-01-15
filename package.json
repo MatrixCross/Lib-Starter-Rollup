@@ -1,6 +1,6 @@
 {
   "name": "lib-starter-rollup1",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "快速创建一个JS/TS库并使用Rollup打包",
   "license": "MIT",
   "main": "dist/cjs/index.js",
@@ -35,7 +35,7 @@
   ],
   "scripts": {
     "build": "npm run build:types && npm run build:libs && npm run build:docs",
-    "build:types": "rimraf ./types && tsc --declaration --emitDeclarationOnly --outDir types",
+    "build:types": "rimraf ./types && tsc --declaration --emitDeclarationOnly --outDir types -p tsconfig.lib.json",
     "build:libs": "rimraf ./dist && rollup -c --bundleConfigAsCjs",
     "build:docs": "typedoc",
     "build:vp": "vitepress build .",

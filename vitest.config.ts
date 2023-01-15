@@ -10,7 +10,7 @@ export default defineConfig({
   },
   test: {
     coverage: {
-      reporter: ['text', 'json', 'html'],
+      reporter: ['text', 'json', 'html', 'json-summary'],
     },
   },
 })
