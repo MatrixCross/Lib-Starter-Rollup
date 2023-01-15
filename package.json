@@ -1,41 +1,62 @@
 {
-  "name": "lib-starter-rollup",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/cjs/lib.js",
-  "module": "dist/esm/lib.js",
+  "name": "lib-starter-rollup1",
+  "version": "0.0.2",
+  "description": "快速创建一个JS/TS库并使用Rollup打包",
+  "license": "MIT",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "types/index.d.ts",
-  "jsdelivr": "dist/iife/lib.js",
-  "unpkg": "dist/iife/lib.js",
+  "jsdelivr": "dist/iife/index.js",
+  "unpkg": "dist/iife/index.js",
+  "miniprogram": "dist/cjs",
+  "files": [
+    "dist",
+    "types"
+  ],
   "exports": {
     ".": {
-      "import": "./dist/esm/lib.js",
-      "require": "./dist/cjs/lib.js"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
     },
     "./package.json": "./package.json"
   },
+  "author": "樱吹雪",
+  "homepage": "https://lib-starter-rollup.wyatex.online",
+  "repository": "Wyatex/Lib-Starter-Rollup",
+  "bugs": {
+    "url": "https://github.com/Wyatex/Lib-Starter-Rollup/issues"
+  },
+  "keywords": [
+    "rollup",
+    "bundle",
+    "vitest",
+    "vitepress",
+    "typescript"
+  ],
   "scripts": {
-    "build": "npm run build:types && npm run build:libs && build:doc",
-    "build:types": "tsc --declaration --emitDeclarationOnly --outDir types",
-    "build:libs": "rollup -c --bundleConfigAsCjs",
+    "build": "npm run build:types && npm run build:libs && build:docs",
+    "build:types": "rimraf ./types && tsc --declaration --emitDeclarationOnly --outDir types",
+    "build:libs": "rimraf ./dist && rollup -c --bundleConfigAsCjs",
     "build:docs": "typedoc",
+    "build:vp": "vitepress build .",
+    "test:unit": "vitest",
+    "test:cov": "vitest run --coverage",
     "preview:docs": "vitepress dev ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-terser": "^0.3.0",
     "@rollup/plugin-typescript": "^11.0.0",
+    "@types/node": "^18.11.18",
+    "@vitest/coverage-c8": "^0.27.1",
+    "rimraf": "^4.0.5",
     "rollup": "^3.9.1",
     "tslib": "^2.4.1",
     "typedoc": "^0.23.24",
+    "typedoc-plugin-markdown": "^3.14.0",
     "typescript": "^4.9.4",
     "vitepress": "1.0.0-alpha.36",
+    "vitest": "^0.27.1",
     "vue": "^3.2.45"
-  },
-  "dependencies": {
-    "typedoc-plugin-markdown": "^3.14.0"
   },
   "pnpm": {
     "peerDependencyRules": {

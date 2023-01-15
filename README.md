@@ -7,6 +7,8 @@
 - 支持 typescript
 - 支持 terser 压缩
 - 支持 typedoc 生成文档、vitepress 演示
+- 支持 vitest 单元测试和代码覆盖率生成
+- 支持 Github Action 自动发布 npm 包
 
 ## 使用教程
 

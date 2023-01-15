@@ -1,24 +1,28 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "baseUrl": "src",
-        "declaration": false,
-        "esModuleInterop": true,
-        "inlineSourceMap": false,
-        "lib": ["ESNext", "DOM"],
-        "listEmittedFiles": false,
-        "listFiles": false,
-        "moduleResolution": "node",
-        "noFallthroughCasesInSwitch": true,
-        "pretty": true,
-        "rootDir": "src",
-        "skipLibCheck": true,
-        "strict": true,
-        "target": "ES6",
-        "traceResolution": false
-    },
-    "compileOnSave": false,
-    "exclude": ["node_modules", "dist"],
-    "include": ["src"]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "esnext",
+    "target": "esnext",
+    "lib": ["ESNext", "DOM"],
+    "moduleResolution": "node",
+    "strict": true,
+    "pretty": true,
+    "allowJs": true,
+    "listFiles": false,
+    "declaration": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "traceResolution": false,
+    "inlineSourceMap": false,
+    "resolveJsonModule": true,
+    "listEmittedFiles": false,
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "compileOnSave": false,
+  "exclude": ["node_modules", "dist"],
+  "include": ["src"]
 }

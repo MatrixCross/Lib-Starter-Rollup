@@ -1,0 +1,40 @@
+name: CI
+
+# 触发工作流程的事件
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+# 按顺序运行作业
+jobs:
+  npm_pub:
+    # 指定的运行器环境
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/workflows/setup
+      # 执行构建步骤
+      - name: 构建
+        run: pnpm build
+      # 发布
+      - uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+  codecov:
+    # 指定的运行器环境
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/workflows/setup
+      # 生成测试覆盖率
+      - name: Run Test Coverage
+        run: pnpm test:cov
+      # 生成pr报告
+      - name: Report Coverage
+        uses: davelosert/vitest-coverage-report-action@v1
+      # 上传到codecov
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          directory: coverage
+          token: ${{ secrets.CODECOV_TOKEN }}
