@@ -38,7 +38,7 @@
     "build:types": "rimraf ./types && tsc --declaration --emitDeclarationOnly --outDir types -p tsconfig.lib.json",
     "build:libs": "rimraf ./dist && rollup -c --bundleConfigAsCjs",
     "build:docs": "typedoc",
-    "build:vp": "vitepress build .",
+    "build:vp": "typedoc && vitepress build .",
     "test:unit": "vitest",
     "test:cov": "vitest run --coverage",
     "preview:docs": "vitepress dev ."
