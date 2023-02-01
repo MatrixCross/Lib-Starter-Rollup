@@ -41,15 +41,26 @@
     "build:vp": "typedoc && vitepress build .",
     "test:unit": "vitest",
     "test:cov": "vitest run --coverage",
-    "preview:docs": "vitepress dev ."
+    "preview:docs": "vitepress dev .",
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit --skipLibCheck",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
     "@rollup/plugin-terser": "^0.3.0",
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/node": "^18.11.18",
     "@vitest/coverage-c8": "^0.27.1",
+    "bumpp": "^8.2.1",
+    "conventional-changelog": "^3.1.25",
+    "conventional-changelog-cli": "^2.2.2",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
     "rimraf": "^4.0.5",
     "rollup": "^3.9.1",
+    "simple-git-hooks": "^2.8.1",
     "tslib": "^2.4.1",
     "typedoc": "^0.23.24",
     "typedoc-plugin-markdown": "^3.14.0",
@@ -64,5 +75,15 @@
         "@algolia/client-search"
       ]
     }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged && npm run typecheck",
+    "commit-msg": "npx --no -- commitlint --edit ${1}"
+  },
+  "lint-staged": {
+    "*.{ts}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
