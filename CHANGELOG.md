@@ -1,3 +1,12 @@
+## [0.0.3](https://github.com/Wyatex/Lib-Starter-Rollup/compare/v0.0.2...v0.0.3) (2023-02-01)
+
+
+### Features
+
+* **project:** 添加多个依赖、完善项目 ([8385284](https://github.com/Wyatex/Lib-Starter-Rollup/commit/8385284d5013434efe909a9486b776f1d2564042))
+
+
+
 ## [0.0.2](https://github.com/Wyatex/Lib-Starter-Rollup/compare/eb6a84b314b155f55f216d7dacc2bb904a8e3a6d...v0.0.2) (2023-01-16)
 
 
