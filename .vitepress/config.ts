@@ -9,6 +9,7 @@ export default defineConfig({
         items: [
           { text: '关于项目', link: '/README' },
           { text: '更新日志', link: '/CHANGELOG' },
+          { text: '演示页面', link: '/docs/index' },
         ],
       },
       {

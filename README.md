@@ -10,9 +10,12 @@
 
 - 支持 typescript
 - 支持 terser 压缩
-- 支持 typedoc 生成文档、vitepress 演示
-- 支持 vitest 单元测试和代码覆盖率生成
+- 支持 [typedoc](https://github.com/TypeStrong/typedoc) 生成文档、vitepress 演示
+- 支持 [vitest](https://github.com/vitest-dev/vitest) 单元测试和代码覆盖率生成
 - 支持 Github Action 自动发布 npm 包
+- 支持 commit 信息检查、changelog 生成
+- 支持 prettier 格式化
+- 支持 githook ，基于[simple-git-hooks](https://github.com/toplenboren/simple-git-hooks)
 
 ## 使用教程
 
@@ -36,6 +39,8 @@ export default defineConfig({
   ],
 })
 ```
+
+4. 如果需要多入口打包，可以参考我的[这篇文章](https://wyatex.work/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%EF%BC%9Atsup/#%E9%85%8D%E7%BD%AE-package-json)进行配置 package.json
 
 ## 一些建议
 
