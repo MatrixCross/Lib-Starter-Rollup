@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/Wyatex/Lib-Starter-Rollup/branch/master/graph/badge.svg?token=8GQVJ21GMP)](https://codecov.io/gh/Wyatex/Lib-Starter-Rollup)
 [![CI](https://github.com/Wyatex/Lib-Starter-Rollup/actions/workflows/main.yml/badge.svg)](https://github.com/Wyatex/Lib-Starter-Rollup/actions/workflows/main.yml)
 
-快速创建一个 JS/TS 类库，使用 Rollup 打包，开箱即用。本项目不建议作为组件库开发模板，组件库更适合使用 vite 的 lib 模式。
+快速创建一个 JS/TS 库，使用 Rollup 打包，开箱即用。本项目不建议作为组件库开发模板，组件库更适合使用 vite 的 lib 模式。
 
 ## 特性
 
