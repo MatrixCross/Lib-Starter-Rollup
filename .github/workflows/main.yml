@@ -10,6 +10,7 @@ on:
 # 按顺序运行作业
 jobs:
   npm_pub:
+    if: github.actor != 'dependabot[bot]'
     # 指定的运行器环境
     runs-on: ubuntu-latest
     steps:
@@ -17,8 +18,8 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 7.25.0
-      - name: Install modules
-        run: pnpm install
+          run_install: |
+            - recursive: false
       # 执行构建步骤
       - name: 构建
         run: pnpm build
@@ -27,6 +28,7 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
   codecov:
+    if: github.actor != 'dependabot[bot]'
     # 指定的运行器环境
     runs-on: ubuntu-latest
     steps:
@@ -34,8 +36,8 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 7.25.0
-      - name: Install modules
-        run: pnpm install
+          run_install: |
+            - recursive: false
       # 生成测试覆盖率
       - name: Run Test Coverage
         run: npx vitest --coverage
@@ -51,3 +53,18 @@ jobs:
         with:
           directory: coverage
           token: ${{ secrets.CODECOV_TOKEN }}
+  dependabot:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.25.0
+          run_install: |
+            - recursive: false
+              args: [--no-frozen-lockfile]
+      - name: Run Test
+        run: pnpm test:unit
+      - name: Run Type Check
+        run: pnpm typecheck
