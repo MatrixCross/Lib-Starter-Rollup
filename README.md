@@ -6,6 +6,14 @@
 
 快速创建一个 JS/TS 库，使用 Rollup 打包，开箱即用。本项目不建议作为组件库开发模板，组件库更适合使用 vite 的 lib 模式。
 
+## 使用本模板
+```
+npm create matrix-starter
+或者pnpm
+pnpm create matrix-starter
+```
+选择模板选： lib
+
 ## 特性
 
 - 支持 typescript
