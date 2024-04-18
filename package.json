@@ -85,5 +85,8 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   }
 }
