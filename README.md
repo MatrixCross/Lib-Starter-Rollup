@@ -48,7 +48,7 @@ export default defineConfig({
 })
 ```
 
-4. 如果需要多入口打包，可以参考我的[这篇文章](https://wyatex.work/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%EF%BC%9Atsup/#%E9%85%8D%E7%BD%AE-package-json)进行配置 package.json
+4. 如果需要多入口打包，可以参考我的[这篇文章](https://wyatex.xyz/%E5%89%8D%E7%AB%AF/%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%EF%BC%9Atsup/#%E9%85%8D%E7%BD%AE-package-json)进行配置 package.json
 
 ## 一些建议
 
